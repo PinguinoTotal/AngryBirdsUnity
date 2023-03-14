@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2dd8aa1122c89498e313275b00f3dd, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  nombre: Red
-  Prefab: {fileID: 5461340569055663310, guid: d4d6b6db3e1daae43a59e0c0391f5f55, type: 3}
-  accionDespeusDeSerDisparado: 0
+  tipoDeBala: 2
+  Prefab: {fileID: 5461340569055663310, guid: 18248670a4bbb5b4cb28bbe3edca1d65, type: 3}
+  accionDespeusDeSerDisparado: 1
