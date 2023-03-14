@@ -66,8 +66,14 @@ PrefabInstance:
     - target: {fileID: 1598645411293218591, guid: 6e91f2c4fecb41b42a0f7ffb0441a7a0,
         type: 3}
       propertyPath: m_Name
-      value: BulletBASE
+      value: RedBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 6806569116798290751, guid: 6e91f2c4fecb41b42a0f7ffb0441a7a0,
+        type: 3}
+      propertyPath: bulletsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bc1be3e9d9ca214d86365210dd427b2,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
