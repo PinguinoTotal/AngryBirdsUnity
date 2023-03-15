@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : MonoBehaviour
+public class RotateCanonToPoint : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform pointer;
-    [SerializeField] private Transform bocaDeCanon;
-    [SerializeField] private ListBulletsSO listBulletsSO;
+    private Vector3 targetOrtientation;
 
     private void Update()
     {
@@ -17,8 +16,14 @@ public class Canon : MonoBehaviour
             pointer.position = raycastHit.point;
         }
 
-        Vector3 targetOrtientation = pointer.position-transform.position;
+        targetOrtientation = pointer.position - transform.position;
 
         transform.rotation = Quaternion.LookRotation(targetOrtientation);
     }
+
+    public Vector3 GetOrientation()
+    {
+        return targetOrtientation;
+    }
+
 }
