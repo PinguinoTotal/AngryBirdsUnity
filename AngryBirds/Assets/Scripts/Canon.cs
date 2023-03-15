@@ -6,6 +6,8 @@ public class Canon : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform pointer;
+    [SerializeField] private Transform bocaDeCanon;
+    [SerializeField] private ListBulletsSO listBulletsSO;
 
     private void Update()
     {
