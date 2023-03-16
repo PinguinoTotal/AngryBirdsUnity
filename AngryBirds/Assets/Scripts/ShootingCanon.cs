@@ -11,8 +11,9 @@ public class ShootingCanon : MonoBehaviour
     [SerializeField] private Transform bulletPool;
     private RotateCanonToPoint rotateCanonToPoint;
     [SerializeField] private float force = 5f;
-    
-   
+    private int balaADisparar = 0;
+
+
     private void Awake()
     {
         gameInput.OnInteractPush += GameInput_OnInteractPush;
@@ -21,12 +22,19 @@ public class ShootingCanon : MonoBehaviour
 
     private void GameInput_OnInteractPush(object sender, System.EventArgs e)
     {
-        BulletSO bulletSO = listBulletsSO.bullets[0];
+        BulletSO bulletSO = listBulletsSO.bullets[balaADisparar];
         Transform bullet = Instantiate(bulletSO.Prefab, bocaDeCanon.position, Quaternion.identity, bulletPool);
         Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
         rigidbody.AddForce(rotateCanonToPoint.GetOrientation().normalized * force, ForceMode.Impulse);
-        
+
     }
+
+    public void SetBalaADisparar(int index)
+    {
+        balaADisparar= index;
+    }
+
+    
 
     
 }
