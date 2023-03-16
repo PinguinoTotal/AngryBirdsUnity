@@ -9,13 +9,14 @@ public class ShootingCanon : MonoBehaviour
     [SerializeField] private Transform bocaDeCanon;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform bulletPool;
-    [SerializeField] private RotateCanonToPoint rotateCanonToPoint;
+    private RotateCanonToPoint rotateCanonToPoint;
     [SerializeField] private float force = 5f;
     
    
     private void Awake()
     {
         gameInput.OnInteractPush += GameInput_OnInteractPush;
+        rotateCanonToPoint = GetComponent<RotateCanonToPoint>();
     }
 
     private void GameInput_OnInteractPush(object sender, System.EventArgs e)
