@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3358402302777278760}
   m_Layer: 0
-  m_Name: Palo
+  m_Name: PaloDeMadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 6106792993399398042}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7739037342778580057
 PrefabInstance:
@@ -107,7 +107,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3788347548282312825, guid: cddde5a2e536549479e7a30ac064bbf2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3358402302167317872}
+      addedObject: {fileID: 3619153907719503236}
   m_SourcePrefab: {fileID: 100100000, guid: cddde5a2e536549479e7a30ac064bbf2, type: 3}
 --- !u!4 &6106792993399398042 stripped
 Transform:
@@ -121,7 +121,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7739037342778580057}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3358402302167317872
+--- !u!114 &3619153907719503236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6914291463221806112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8eb53ae99db5c4fa6284af760eb5b3, type: 3}
+  m_Script: {fileID: 11500000, guid: c5f72a25114b7c94daa4f825fab59e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PaloRoto: {fileID: 7833486803752883843, guid: 07bb18c5ee0a80a429a06b9b3694e3b7,
-    type: 3}
-  padreTransform: {fileID: 3358402302777278760}
+  elementoEstructuralRompibleSO: {fileID: 11400000, guid: 5f7fad057ac65f14991a9aeab0f118c4,
+    type: 2}
+  padreADestruir: {fileID: 3358402302777278760}
