@@ -6,31 +6,51 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private BulletSO bulletsSO;
-    [SerializeField] private GameInput gameInput;
-    private bool impacto;
-    private bool yaHizoEspecial;
+    [SerializeField] private float explosionRadius = 100;
+    [SerializeField] private float explosionForce = 2000;
 
-    private void Awake()
+    public BulletSO GetBulletSO()
     {
-        gameInput.OnInteractPush += GameInput_OnInteractPush;
+        return bulletsSO;
     }
 
-    private void GameInput_OnInteractPush(object sender, System.EventArgs e)
+    public void RealizaAccionEspecial()
     {
-        if (!yaHizoEspecial && bulletsSO.accionDespeusDeSerDisparado && !impacto)
+        BulletSO.TipoDeBala miBala = bulletsSO.tipoDeBala;
+        switch (miBala)
         {
-            yaHizoEspecial= true;
-            RealizaMovimientoEspecial();
+            case BulletSO.TipoDeBala.Red:
+                Debug.LogError("la funcion realiza accion se esta llamando y la bala es tipo red");
+                break;
+
+            case BulletSO.TipoDeBala.Yellow:
+                Rigidbody rigidbody = GetComponent<Rigidbody>();
+                rigidbody.velocity = rigidbody.velocity * 1.5f;
+                Debug.Log("yellow esta acelerando");
+                break;
+
+            case BulletSO.TipoDeBala.Bomb:
+                explosionRadius = 100;
+                explosionForce = 2000;
+                var surroundingObjects = Physics.OverlapSphere(transform.position, explosionRadius);
+                Debug.Log("bomb esta explotando");
+
+                foreach (var ob in surroundingObjects)
+                {
+                    Rigidbody rb = ob.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                    }
+                }
+
+            break;
+
         }
     }
 
-    private void RealizaMovimientoEspecial()
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Realizando movimiento especial");
-    }
-
-    BulletSO GetBulletSO()
-    {
-        return bulletsSO;
+        ShootingCanon.SharedInstance.ListoParaVolverADisparar(this);
     }
 }
