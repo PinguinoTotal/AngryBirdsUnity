@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53318960519fa874480388cbfa4185b8
+guid: 66e24f196b98b60468c89aa75dd2871c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Madera
-    second: {fileID: 2100000, guid: 71f2cc1d4da31dd48b0674395b5dfef0, type: 2}
+      name: Vidrio
+    second: {fileID: 2100000, guid: e5520df149f6aa1478bfc875a4ce5d94, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,8 +47,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -82,7 +82,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []

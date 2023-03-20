@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PaloDeMadera
   m_EditorClassIdentifier: 
   resitencia: 80
-  ObjetoRoto: {fileID: 7833486803752883843, guid: 07bb18c5ee0a80a429a06b9b3694e3b7,
+  ObjetoRoto: {fileID: 2689711657480675631, guid: f43d1377052905a43b21329681fb4365,
     type: 3}

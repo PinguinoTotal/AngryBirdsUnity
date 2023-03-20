@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6910d2b8f0cfdf4d8296053ca78c2f5, type: 3}
-  m_Name: PaloDeVidrio
+  m_Name: BaseDeMadera
   m_EditorClassIdentifier: 
-  resitencia: 15
-  ObjetoRoto: {fileID: 4592180945843126616, guid: 48f676f33c6f9bc4aa4827e21ee391f4,
+  resitencia: 80
+  ObjetoRoto: {fileID: 2994990457775380978, guid: 545eec61348132548a80d97ea5c787fc,
     type: 3}
