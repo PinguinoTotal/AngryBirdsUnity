@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e2dd8aa1122c89498e313275b00f3dd, type: 3}
-  m_Name: Yellow
+  m_Name: Rana
   m_EditorClassIdentifier: 
   tipoDeBala: 1
-  Prefab: {fileID: 5461340569055663310, guid: bafd9171aa795914496fa41f9c41b5aa, type: 3}
+  Prefab: {fileID: 1397762159567091833, guid: 4ef8810a1184b8248a91509654265e10, type: 3}
   accionDespeusDeSerDisparado: 1

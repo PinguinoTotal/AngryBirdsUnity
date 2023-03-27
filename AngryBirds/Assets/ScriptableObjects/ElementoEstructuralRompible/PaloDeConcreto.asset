@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2dd8aa1122c89498e313275b00f3dd, type: 3}
-  m_Name: Bomb
+  m_Script: {fileID: 11500000, guid: f6910d2b8f0cfdf4d8296053ca78c2f5, type: 3}
+  m_Name: PaloDeConcreto
   m_EditorClassIdentifier: 
-  tipoDeBala: 2
-  Prefab: {fileID: 5461340569055663310, guid: 18248670a4bbb5b4cb28bbe3edca1d65, type: 3}
-  accionDespeusDeSerDisparado: 1
+  resitencia: 100
+  ObjetoRoto: {fileID: 4920331928383571042, guid: 6f42e5c3e9551bf48952a68fd8f1fe53,
+    type: 3}

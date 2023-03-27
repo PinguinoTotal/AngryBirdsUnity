@@ -6,9 +6,9 @@ public class DeadZone : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.TryGetComponent<Puerco>(out Puerco puercoCaido))
+        if (other.transform.TryGetComponent<Pato>(out Pato patoCaido))
         {
-            puercoCaido.PuercoCaido();
+            patoCaido.PatoCaido();
         }
     }
 }

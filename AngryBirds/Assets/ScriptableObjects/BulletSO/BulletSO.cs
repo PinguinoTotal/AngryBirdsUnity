@@ -9,9 +9,9 @@ public class BulletSO : ScriptableObject
 {
     public enum TipoDeBala
     {
-        Red,
-        Yellow,
-        Bomb
+        Conejo,
+        Rana,
+        Tlacuache
     }
     public TipoDeBala tipoDeBala;
     public Transform Prefab;

@@ -12,7 +12,7 @@ public class ShootingCanon : MonoBehaviour
     [SerializeField] private Transform bulletPool;
     private RotateCanonToPoint rotateCanonToPoint;
     [SerializeField] private float force = 5f;
-    private int balaADisparar = 0;
+    [SerializeField] private int balaADisparar = 0;
     private bool puedoVolverADisparar = true;
     private Bullet balaEnElAire;
 

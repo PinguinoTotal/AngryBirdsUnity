@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PaloDeVidrio
   m_EditorClassIdentifier: 
   resitencia: 15
-  ObjetoRoto: {fileID: 4592180945843126616, guid: 48f676f33c6f9bc4aa4827e21ee391f4,
+  ObjetoRoto: {fileID: 1477093943502522430, guid: 161bc1209a4e307479bbe946d8681049,
     type: 3}

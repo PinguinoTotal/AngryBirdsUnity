@@ -19,17 +19,17 @@ public class Bullet : MonoBehaviour
         BulletSO.TipoDeBala miBala = bulletsSO.tipoDeBala;
         switch (miBala)
         {
-            case BulletSO.TipoDeBala.Red:
+            case BulletSO.TipoDeBala.Conejo:
                 Debug.LogError("la funcion realiza accion se esta llamando y la bala es tipo red");
                 break;
 
-            case BulletSO.TipoDeBala.Yellow:
+            case BulletSO.TipoDeBala.Rana:
                 Rigidbody rigidbody = GetComponent<Rigidbody>();
                 rigidbody.velocity = rigidbody.velocity * 1.5f;
                 Debug.Log("yellow esta acelerando");
                 break;
 
-            case BulletSO.TipoDeBala.Bomb:
+            case BulletSO.TipoDeBala.Tlacuache:
                 explosionRadius = 100;
                 explosionForce = 2000;
                 var surroundingObjects = Physics.OverlapSphere(transform.position, explosionRadius);
