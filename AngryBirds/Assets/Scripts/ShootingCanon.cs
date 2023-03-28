@@ -10,6 +10,7 @@ public class ShootingCanon : MonoBehaviour
     [SerializeField] private ListBulletsSO listBulletsSO;
     [SerializeField] private Transform bocaDeCanon;
     [SerializeField] private Transform bulletPool;
+    [SerializeField] private ParticleSystem explosion;
     private RotateCanonToPoint rotateCanonToPoint;
     [SerializeField] private float force = 5f;
     [SerializeField] private int balaADisparar = 0;
@@ -46,6 +47,7 @@ public class ShootingCanon : MonoBehaviour
         balaEnElAire = bullet.GetComponent<Bullet>();
         Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
         rigidbody.AddForce(rotateCanonToPoint.GetOrientation().normalized * force, ForceMode.Impulse);
+        explosion.Play();
     }
 
     public void SetBalaADisparar(int index)
