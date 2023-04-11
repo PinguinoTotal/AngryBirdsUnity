@@ -14,28 +14,64 @@ public class ShootingCanon : MonoBehaviour
     private RotateCanonToPoint rotateCanonToPoint;
     [SerializeField] private float force = 5f;
     [SerializeField] private int balaADisparar = 0;
-    private bool puedoVolverADisparar = true;
-    private Bullet balaEnElAire;
+    [SerializeField] private bool puedoVolverADisparar = true;
+    [SerializeField] private Bullet balaEnElAire;
+    [SerializeField] private estatusDeLaCamara estatusDeLaCamara;
+    [SerializeField] private AudioSource audioDelCanon;
 
 
     private void Awake()
     {
-        SharedInstance= this;
-        GameInputManager.SharedInsatance.OnInteractPush += GameInputManager_OnInteractPush;
+        SharedInstance = this;
         rotateCanonToPoint = GetComponent<RotateCanonToPoint>();
+        
+    }
+    private void Start()
+    {
+
+        GameInputManager.SharedInsatance.OnInteractPush += GameInputManager_OnInteractPush;
+        estatusDeLaCamara = CamaraManager.sharedInstance.GetEstatusDeLaCamara();
+        audioDelCanon= GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
     }
 
     private void GameInputManager_OnInteractPush(object sender, System.EventArgs e)
     {
-        if (puedoVolverADisparar)
+        if (GameManager.SharedInstance.GetEstadoDelJuego() == GameManager.EstadoDelJuego.enJuego)
         {
-            balaEnElAire = null;
-            InstanciaBalayDispara();
-        }
-        else{
-            puedoVolverADisparar=true;
-            balaEnElAire.RealizaAccionEspecial();
-            balaEnElAire = null;
+            estatusDeLaCamara = CamaraManager.sharedInstance.GetEstatusDeLaCamara();
+
+            switch (estatusDeLaCamara)
+            {
+                case estatusDeLaCamara.ViendoLaEstructura:
+                    CamaraManager.sharedInstance.MirandoAlCanon();
+                    PointerManager.SharedInstance.MuestraTiro();
+                    Debug.Log("viendo al cañon");
+                    break;
+
+                case estatusDeLaCamara.viendoAlCanon:
+                    Debug.Log("disparando el cañon");
+                    audioDelCanon.Play();
+                    InstanciaBalayDispara();
+                    PointerManager.SharedInstance.DisparaYGuardaValor();
+                    break;
+
+                case estatusDeLaCamara.siguiendoBala:
+                    Debug.Log("mirando la estructura");
+                    if (!puedoVolverADisparar)
+                    {
+                        puedoVolverADisparar = true;
+                        balaEnElAire.RealizaAccionEspecial();
+                    }
+                    CamaraManager.sharedInstance.DejaDeVerLaBala();
+                    balaEnElAire = null;
+                    CamaraManager.sharedInstance.MirandoLaEstructura();
+                    break;
+                
+            }
         }
     }
 
@@ -44,6 +80,13 @@ public class ShootingCanon : MonoBehaviour
         BulletSO bulletSO = listBulletsSO.bullets[balaADisparar];
         puedoVolverADisparar = !bulletSO.accionDespeusDeSerDisparado;
         Transform bullet = Instantiate(bulletSO.Prefab, bocaDeCanon.position, Quaternion.identity, bulletPool);
+
+
+
+        GameManager.SharedInstance.SumaPuntos(-(bulletSO.costeDeBala));
+        
+        CamaraManager.sharedInstance.MirandoLaBala(bullet);
+
         balaEnElAire = bullet.GetComponent<Bullet>();
         Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
         rigidbody.AddForce(rotateCanonToPoint.GetOrientation().normalized * force, ForceMode.Impulse);

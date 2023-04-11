@@ -11,6 +11,7 @@ public class RomperEsteObjeto : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude >= elementoEstructuralRompibleSO.resitencia && !objetoRoto)
         {
+            
             objetoRoto= true;
             //Debug.Log("objeto" + gameObject + "roto");
             if (contenedorEstructural !=null)
@@ -21,7 +22,7 @@ public class RomperEsteObjeto : MonoBehaviour
             {
                 Instantiate(elementoEstructuralRompibleSO.ObjetoRoto, transform.position, transform.rotation);
             }
-            
+            GameManager.SharedInstance.SumaPuntos(elementoEstructuralRompibleSO.puntosADar);
             Destroy(this.gameObject);
             
             

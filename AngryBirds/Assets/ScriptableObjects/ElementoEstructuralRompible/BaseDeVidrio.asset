@@ -15,3 +15,4 @@ MonoBehaviour:
   resitencia: 15
   ObjetoRoto: {fileID: 7464675637789423090, guid: bc37339782ca46340a048026aae6cc5c,
     type: 3}
+  puntosADar: 10

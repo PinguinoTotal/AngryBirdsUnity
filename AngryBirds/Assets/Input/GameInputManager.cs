@@ -19,6 +19,13 @@ public class GameInputManager : MonoBehaviour
         playerInput.player.Interact.performed += Interact_performed;
     }
 
+    private void OnDestroy()
+    {
+        playerInput.player.Interact.performed -= Interact_performed;
+
+        playerInput.Dispose();
+    }
+
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnInteractPush?.Invoke(this, EventArgs.Empty);

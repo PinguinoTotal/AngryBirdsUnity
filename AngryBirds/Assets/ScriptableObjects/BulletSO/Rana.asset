@@ -15,3 +15,4 @@ MonoBehaviour:
   tipoDeBala: 1
   Prefab: {fileID: 1397762159567091833, guid: 4ef8810a1184b8248a91509654265e10, type: 3}
   accionDespeusDeSerDisparado: 1
+  costeDeBala: 20

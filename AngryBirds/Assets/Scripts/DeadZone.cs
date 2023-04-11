@@ -8,7 +8,7 @@ public class DeadZone : MonoBehaviour
     {
         if (other.transform.TryGetComponent<Pato>(out Pato patoCaido))
         {
-            patoCaido.PatoCaido();
+            patoCaido.PatoEliminado();
         }
     }
 }

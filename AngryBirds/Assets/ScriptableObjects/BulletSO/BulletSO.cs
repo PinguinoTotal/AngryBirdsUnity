@@ -16,4 +16,5 @@ public class BulletSO : ScriptableObject
     public TipoDeBala tipoDeBala;
     public Transform Prefab;
     public bool accionDespeusDeSerDisparado;
+    public int costeDeBala;
 }
